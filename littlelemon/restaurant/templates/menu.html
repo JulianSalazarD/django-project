@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="column">
+    {% for item in menu %}
+    <form action="{% url 'menu_item' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="num" value={{ forloop.counter }}>
+        <button class="menu-name" type="submit">{{item.name}}</button>
+    </form>
+    <p>
+        ${{ item.price }}.00
+
+    </p>
+    {% endfor %}
+</div>
+<!--End col-->
+{% endblock %}

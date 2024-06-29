@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # The settings for app updated for the Graded assessment
-    'restaurant',
+    'restaurant.apps.RestaurantConfig',
 ]
 
 MIDDLEWARE = [
